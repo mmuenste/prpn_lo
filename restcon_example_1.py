@@ -23,3 +23,6 @@ response = requests.get(yang_url, headers=headers, auth=cred, verify=False)
 
 print(response.status_code)
 pprint(response.json())
+
+with open("modules-state.json", "w") as fobj:
+    fobj.write(response.text)
