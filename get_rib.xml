@@ -1,0 +1,46 @@
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:29dd634d-a01c-4a4c-b0e2-37fea584469b">
+  <data>
+    <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
+      <routing-instance>
+        <name>default</name>
+        <description>default-vrf [read-only]</description>
+        <interfaces/>
+        <routing-protocols>
+          <routing-protocol>
+            <type xmlns:ospf="urn:ietf:params:xml:ns:yang:ietf-ospf">ospf:ospfv2</type>
+            <name>1</name>
+            <ospf xmlns="urn:ietf:params:xml:ns:yang:ietf-ospf">
+              <instance>
+                <af xmlns:rt="urn:ietf:params:xml:ns:yang:ietf-routing">rt:ipv4</af>
+                <router-id>1.1.1.1</router-id>
+                <nsr>
+                  <enable>false</enable>
+                </nsr>
+                <auto-cost>
+                  <enable>false</enable>
+                </auto-cost>
+                <redistribution xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
+                  <rip/>
+                </redistribution>
+              </instance>
+            </ospf>
+          </routing-protocol>
+          <routing-protocol>
+            <type>static</type>
+            <name>1</name>
+            <static-routes>
+              <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ipv4-unicast-routing">
+                <route>
+                  <destination-prefix>0.0.0.0/0</destination-prefix>
+                  <next-hop>
+                    <next-hop-address>192.168.181.254</next-hop-address>
+                  </next-hop>
+                </route>
+              </ipv4>
+            </static-routes>
+          </routing-protocol>
+        </routing-protocols>
+      </routing-instance>
+    </routing>
+  </data>
+</rpc-reply>
